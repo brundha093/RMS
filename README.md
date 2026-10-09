@@ -64,28 +64,7 @@ The included SQL policies are suitable for initial testing only. Before
 production, replace the demo username/password table and open anon policies
 with Supabase Auth and row-level security policies.
 
-## Build the Android APK
 
-Buildozer is normally run in Linux, WSL2, or CI:
-
-```bash
-buildozer android debug
-```
-
-The resulting debug APK is placed in `bin/`. The Android build requests `INTERNET` and `SEND_SMS` permissions. The owner still confirms each SMS in the device messaging app.
-
-The APK is standalone: on first launch it copies the bundled populated
-`rental_manager.db` into Android's writable private app directory. Subsequent
-payments and tenant edits are stored there and survive app restarts. This is
-local storage per phone; using the same records across multiple phones still
-requires the hosted PostgreSQL/Supabase backend described below.
-
-The Android dependency chain includes Pillow, FreeType, and HarfBuzz for font
-loading and complex-script shaping. The current upstream python-for-android
-recipe set does not provide a `libraqm` recipe; adding `libraqm` directly to
-`requirements` would stop the build with an unknown-recipe error. If Pillow
-features that specifically require Raqm are later needed, add a custom
-python-for-android Raqm recipe together with its FriBidi dependency.
 
 ## Production checklist
 
