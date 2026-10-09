@@ -1,0 +1,10 @@
+.env
+supabase_config.py
+__pycache__/
+*.py[cod]
+rental_manager.db
+electricity_bills.json
+Excel.xlsx
+New folder/
+bin/
+.buildozer/

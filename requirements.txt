@@ -1,0 +1,7 @@
+kivy==2.3.1
+openpyxl==3.1.5
+Pillow==11.3.0
+Appium-Python-Client
+requests
+openai
+python-dotenv
